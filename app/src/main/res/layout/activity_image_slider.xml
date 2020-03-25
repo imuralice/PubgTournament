@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".startscreen.ImageSliderActivity">
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="bottom"
+        app:sliderIndicatorMarginLeft="25dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="1.5dp"
+        app:sliderIndicatorSelectedColor="#000"
+        app:sliderIndicatorUnselectedColor="#7292A7"
+        app:sliderScrollTimeInSec="1"
+        app:sliderStartAutoCycle="true"
+        android:layout_above="@id/relative_layout_bottom"/>
+
+    <RelativeLayout
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:id="@+id/relative_layout_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_ac_tv"
+            android:id="@+id/donthaveac_tv"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/register_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registerTv"
+            android:textStyle="bold"
+            android:layout_margin="2dp"
+            android:textColor="@color/colorOrange"
+            android:layout_below="@+id/donthaveac_tv"/>
+
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_user_tv"
+            android:id="@+id/alreadyhaveac_tv"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/login_tv"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginTv"
+            android:textStyle="bold"
+            android:layout_margin="2dp"
+            android:textColor="@color/colorOrange"
+            android:layout_below="@+id/alreadyhaveac_tv"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

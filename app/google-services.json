@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "648585353622",
+    "firebase_url": "https://the-squad-71169.firebaseio.com",
+    "project_id": "the-squad-71169",
+    "storage_bucket": "the-squad-71169.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648585353622:android:6fddc3bd108cb0d79fe5b7",
+        "android_client_info": {
+          "package_name": "com.skteam.thesquad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648585353622-vp8htegm6osm2kpdq6lg4lpg59rf087n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOc98PbppEMcI2P6T_GDIAmWHEFPiwQZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648585353622-vp8htegm6osm2kpdq6lg4lpg59rf087n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

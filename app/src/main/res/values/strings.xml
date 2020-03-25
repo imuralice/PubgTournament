@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">GamerjiClone</string>
+
+    //Start Screen
+    <string name="loginTv">Login</string>
+    <string name="registerTv">Register</string>
+    <string name="dont_have_ac_tv">Dont have an account?</string>
+    <string name="already_user_tv">Already a user?</string>
+
+    <string name="title1">SELECT A GAME</string>
+    <string name="title2">DECIDE THE GAME TYPEE</string>
+    <string name="title3">JOIN A CONTEST</string>
+    <string name="title4">COMPETE AND WIN MONEY!</string>
+
+    <string name="description1">Select the game you would like to enter a contest for</string>
+    <string name="description2">Select the game type you want to play under</string>
+    <string name="description3">Join a contest that best suits your gameplay and at the time convenient to you</string>
+    <string name="description4">Play the tournament and stand a chance to win real money</string>
+    //
+
+
+    //Login And Register
+    <string name="fantasyJi">You can also login using your FantasyJi account.</string>
+    <string name="or">or</string>
+    <string name="country_code_tv">Country Code</string>
+    <string name="phonenum">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signupcode">SignUp Code</string>
+    <string name="termandcon">Terms and Conditions and Privacy Policy</string>
+    <string name="alreadyhaveac">Already have an account?</string>
+
+    <string name="facebook_app_id">2658899471023884</string>
+    <string name="fb_login_protocol_scheme">fb2658899471023884</string>
+
+    <string name="forget_pass">Forget Password?</string>
+    <string name="login_using">Login using email id.</string>
+
+    <string name="enter_otp">ENTER OTP</string>
+    <string name="otp_on_ur_number">We have sent an OTP on your number</string>
+    <string name="enter_otp_received">Enter the OTP you received</string>
+    <string name="submit">Submit</string>
+    //
+
+    //BottomSheet phone layout
+    <string name="enter_your_number">Enter your number</string>
+    <string name="verify">Verify</string>
+    //
+</resources>
