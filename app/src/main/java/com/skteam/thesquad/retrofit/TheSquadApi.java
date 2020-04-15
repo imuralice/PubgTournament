@@ -2,7 +2,9 @@ package com.skteam.thesquad.retrofit;
 
 
 
+import com.skteam.thesquad.home.HomeItemResponse;
 import com.skteam.thesquad.loginregisteration.User;
+import com.skteam.thesquad.profile.ProfileItemResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -39,7 +41,14 @@ public interface TheSquadApi {
     Call<User> creditReferalAmount(@Field("Email") String email,
                          @Field("Wallet") int wallet);
 
+        @GET("list_home_slider.php")
+   Call<HomeItemResponse>  getHomeSliderImages();
 
+    @GET("list_games.php")
+    Call<HomeItemResponse>  getGamesList();
+
+    @GET("list_badges.php")
+    Call<ProfileItemResponse>  getProfileBadgesList();
 //
 //    @FormUrlEncoded
 //    @POST("update_user_profile.php")

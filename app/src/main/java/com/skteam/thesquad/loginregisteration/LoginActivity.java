@@ -50,6 +50,7 @@ import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.skteam.thesquad.MainActivity;
 import com.skteam.thesquad.R;
 import com.skteam.thesquad.common.Common;
+import com.skteam.thesquad.home.HomeActivity;
 import com.skteam.thesquad.retrofit.TheSquadApi;
 
 import java.util.Arrays;
@@ -87,6 +88,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        initViews();
+        initActions();
+
+    }
+
+
+    //========================All view ids initialize======================//
+    private void initViews(){
         loginusing_tv = findViewById(R.id.loginusing_tv);
         relative_phone_layout = findViewById(R.id.relative_phone_layout);
         email_passwrd_layout = findViewById(R.id.email_paswrd_layout);
@@ -96,10 +105,8 @@ public class LoginActivity extends AppCompatActivity {
         ccp = findViewById(R.id.ccp);
         mAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
-//        AppEventsLogger.activateApp(this);
         callbackManager = CallbackManager.Factory.create();
         google_sign_in = findViewById(R.id.google_sign_in);
-
         progressDialog = new ProgressDialog(this);
         pd = new ProgressDialog(LoginActivity.this);
         pd.setMessage("please wait...");
@@ -108,10 +115,14 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         login_relative_layout = findViewById(R.id.login_relative_layout);
-
         mService = Common.getAPI();
+        loginButton = findViewById(R.id.login_button);
+    }
+    //========================All view ids initialize======================//
 
 
+    //===========================Actions on All Views======================//
+    private void initActions(){
         loginusing_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
         register_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,9 +166,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        //Google sign in
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -174,7 +183,7 @@ public class LoginActivity extends AppCompatActivity {
         ////////
 
 //Facebook Login /////
-        loginButton = findViewById(R.id.login_button);
+
         loginButton.setReadPermissions(Arrays.asList(EMAIL));
         // If you are using in a fragment, call loginButton.setFragment(this);
 
@@ -208,7 +217,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    //===========================Actions on All Views======================//
 
+
+
+    //============================Login using phone number firebase otp verifcation================//
     private void loginUsingNumber() {
 
         final String str_number = "+" + ccp.getSelectedCountryCode() + phone_edittext.getText().toString().trim();
@@ -226,6 +239,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
                     User user = response.body();
+
+                    assert user != null;
                     if (TextUtils.isEmpty(user.getError_msg())) {
                         progressDialog.dismiss();
                         Snackbar.make(relative_layout, "User not found", Snackbar.LENGTH_LONG).show();
@@ -249,7 +264,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+    //============================Login using phone number================//
 
+
+
+    //========================== Log in via email and password mysql===========================//
     private void loginUserUsingEmailPassword() {
         String str_email = email.getText().toString().trim();
         String str_password = password.getText().toString().trim();
@@ -271,7 +290,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onResponse(Call<User> call, Response<User> response) {
                     if (!response.body().isError()) {
                         progressDialog.dismiss();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         startActivity(intent);
                         Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                     } else {
@@ -296,9 +315,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+    //========================== Log in via email and password mysql===========================//
 
+
+
+    //=====================Handle Facebook login checking if fb email exist in databse or not=================//
     private void handleFacebookToken(final AccessToken accessToken) {
-
         final AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -319,6 +341,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+    //=====================Handle Facebook login checkif fb email exist in databse or not=================//
+
 
     //Facebook Login /////
 
@@ -335,6 +359,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.d("REGISTERACTIVTYYYY", "onStart: user not signed in with google");
         }
     }
+
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -381,10 +406,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
+    //======================= Firebase Google Signin ================//
     private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
-
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -402,16 +427,17 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+    //======================= Firebase Google Signin ================//
 
 
+
+//==================If login email not exist open Registeration bottom sheeet==============//
     private void loginUSingPhoneIfUserNotExist(final String user_email) {
-
-
         mService.checkUserExists("randomnumber1125455125", user_email).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!TextUtils.isEmpty(response.body().getError_msg())) {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
 
@@ -506,7 +532,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+//==================If login email not exist open Registeration bottom sheeet==============//
 
+
+
+    //=================== user applied Promo code checking code============================//
     private void checkPromoCode(EditText signup_code, final TextView apply) {
         String str_signup_code = signup_code.getText().toString().trim();
         if (TextUtils.isEmpty(str_signup_code) || str_signup_code.length() != 10) {
@@ -544,4 +574,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+    //=================== Promo code checking code============================//
+
 }

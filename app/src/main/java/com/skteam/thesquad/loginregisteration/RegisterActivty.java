@@ -49,6 +49,7 @@ import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
 import com.skteam.thesquad.MainActivity;
 import com.skteam.thesquad.R;
 import com.skteam.thesquad.common.Common;
+import com.skteam.thesquad.home.HomeActivity;
 import com.skteam.thesquad.retrofit.TheSquadApi;
 import com.skteam.thesquad.startscreen.ImageSliderActivity;
 
@@ -85,6 +86,14 @@ private CallbackManager callbackManager;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_activty);
+initViews();
+        initActions();
+
+
+    }
+
+    //--------------------------- All views ids initialize here =================//
+    private void initViews(){
         mAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
 //        AppEventsLogger.activateApp(this);
@@ -98,15 +107,22 @@ private CallbackManager callbackManager;
         password = findViewById(R.id.password);
         signup_code = findViewById(R.id.signup_code);
         relativeLayout = findViewById(R.id.relative_layout);
-apply = findViewById(R.id.apply);
+        apply = findViewById(R.id.apply);
 
-mService = Common.getAPI();
+        mService = Common.getAPI();
         progressDialog = new ProgressDialog(this);
         pd = new ProgressDialog(RegisterActivty.this);
         pd.setMessage("please wait...");
+        loginButton =  findViewById(R.id.login_button);
+        loginButton.setReadPermissions(Arrays.asList(EMAIL));
+        // If you are using in a fragment, call loginButton.setFragment(this);
+
+    }
 
 
-        //Google sign in
+    //========================= Actions on all views =====================//
+    private void initActions(){
+//Google sign in
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -116,35 +132,31 @@ mService = Common.getAPI();
 
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-google_sign_in.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        signIn();
-    }
-});
-apply.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-         String check_signup_code = signup_code.getText().toString().trim();
-        checkPromoCode(check_signup_code,signup_code,apply);
-    }
-});
+        google_sign_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
+        apply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String check_signup_code = signup_code.getText().toString().trim();
+                checkPromoCode(check_signup_code,signup_code,apply);
+            }
+        });
 
         ////////
 
 //Facebook Login /////
-        loginButton =  findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList(EMAIL));
-        // If you are using in a fragment, call loginButton.setFragment(this);
-
 
         // Callback registration
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 // App code
-              pd.show();
-            handleFacebookToken(loginResult.getAccessToken());
+                pd.show();
+                handleFacebookToken(loginResult.getAccessToken());
             }
 
             @Override
@@ -180,9 +192,9 @@ apply.setOnClickListener(new View.OnClickListener() {
         });
     }
 
+
+    //============================ Checking user applied promo code for validation======================//
     private void checkPromoCode(String str_signup_code, EditText signup_code, final TextView apply) {
-
-
     if (TextUtils.isEmpty(str_signup_code) || str_signup_code.length() != 10){
         signup_code.setError("Invalid code");
         signup_code.requestFocus();
@@ -219,6 +231,8 @@ apply.setOnClickListener(new View.OnClickListener() {
 
     }
 
+
+    //============================== Register User=========================//
     private void registerUser() {
     final String str_number = "+" + ccp.getSelectedCountryCode() + number.getText().toString().trim();
     final String str_num = number.getText().toString().trim();
@@ -319,6 +333,7 @@ progressDialog.dismiss();
     }
 
 
+    //====================== Handle Facebook After login======================//
     private void handleFacebookToken(AccessToken accessToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -339,7 +354,7 @@ progressDialog.dismiss();
 
     }
 
-    //Facebook Login /////
+
 
 
     @Override
@@ -400,6 +415,8 @@ progressDialog.dismiss();
         }
     }
 
+
+    //===================== Firebase Google signin ======================//
     private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -420,14 +437,13 @@ progressDialog.dismiss();
 
 
 
-
+// ========================= Open Registeration bottom sheet if google or fb email doesnt exist==================//
     private void loginUSingPhoneIfUserNotExist(final String user_email) {
-
         mService.checkUserExists("randomnumber1125455125", user_email).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!TextUtils.isEmpty(response.body().getError_msg())) {
-                    Intent intent = new Intent(RegisterActivty.this, MainActivity.class);
+                    Intent intent = new Intent(RegisterActivty.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
 

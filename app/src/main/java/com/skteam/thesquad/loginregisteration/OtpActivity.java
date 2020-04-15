@@ -27,6 +27,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.skteam.thesquad.MainActivity;
 import com.skteam.thesquad.R;
 import com.skteam.thesquad.common.Common;
+import com.skteam.thesquad.home.HomeActivity;
 import com.skteam.thesquad.retrofit.TheSquadApi;
 
 import java.util.Random;
@@ -56,6 +57,11 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
+    initViews();
+
+    }
+
+    private void initViews(){
         go_back = findViewById(R.id.go_back);
         number_tv = findViewById(R.id.number_tv);
         mService = Common.getAPI();
@@ -86,7 +92,6 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
         go_back.setOnClickListener(this);
         submit.setOnClickListener(this);
-
     }
 
     @Override
@@ -109,7 +114,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-
+ //====================== OTP request has sent=================//
     private void requestOTP(String phoneNumber) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber, 60L, TimeUnit.SECONDS, this, new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -139,8 +144,10 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
 
     }
+    //====================== OTP request has sent=================//
 
 
+    // ============================ Verify Received Otp=================//
     private void verifiyOtp(PhoneAuthCredential phoneAuthCredential) {
         firebaseAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -180,7 +187,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
                                                 @Override
                                                 public void onResponse(Call<User> call, Response<User> response) {
                                                     if (!response.body().isError()){
-                                                        Intent intent = new Intent(OtpActivity.this, MainActivity.class);
+                                                        Intent intent = new Intent(OtpActivity.this, HomeActivity.class);
                                                         startActivity(intent);
                                                     }else {
                                                         Toast.makeText(OtpActivity.this, "Failed ", Toast.LENGTH_SHORT).show();
@@ -196,7 +203,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
 
                                         }else {
-                                            Intent intent = new Intent(OtpActivity.this, MainActivity.class);
+                                            Intent intent = new Intent(OtpActivity.this, HomeActivity.class);
                                             startActivity(intent);
                                         }
 
@@ -219,7 +226,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
                             }
                         });
                     } else {
-                        Intent intent = new Intent(OtpActivity.this, MainActivity.class);
+                        Intent intent = new Intent(OtpActivity.this, HomeActivity.class);
                         startActivity(intent);
                     }
 
@@ -251,4 +258,6 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
     }
+    // ============================ Verify Received Otp=================//
+
 }

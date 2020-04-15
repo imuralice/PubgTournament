@@ -9,6 +9,7 @@ public class Common {
     public static boolean isPhoneLogin=false;
     public static boolean isNewPhoneLogin=false;
     private static final String BASE_URL = "https://lyricsfuse.com/TheSquad/";
+    public static final String IMAGE_URL = "https://lyricsfuse.com/TheSquad/Images/";
 
     public static TheSquadApi getAPI(){
         return RetrofitClient.getClient(BASE_URL).create(TheSquadApi.class);

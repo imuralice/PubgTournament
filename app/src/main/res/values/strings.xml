@@ -40,10 +40,103 @@
     <string name="otp_on_ur_number">We have sent an OTP on your number</string>
     <string name="enter_otp_received">Enter the OTP you received</string>
     <string name="submit">Submit</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_info_sent">Reset your password information has been sent</string>
+    <string name="send">Send</string>
+    <string name="create_your_new_password">Create your new password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_hint">******</string>
+    <string name="save_new_password">Save new password</string>
     //
 
     //BottomSheet phone layout
     <string name="enter_your_number">Enter your number</string>
     <string name="verify">Verify</string>
     //
+
+
+    //Profile Activty
+    <string name="profile">Profile</string>
+    <string name="edit">Edit</string>
+    <string name="gamer">Gamer</string>
+    <string name="personal">Personal</string>
+    <string name="recruit">Recruit</string>
+    <string name="gamerji_name">The Squad</string>
+    <string name="pubg_id">Pubg ID</string>
+    <string name="clash_id">Clash ID</string>
+    <string name="points">Points</string>
+    <string name="level">Level</string>
+    <string name="badges">Badges</string>
+    <string name="played">Played</string>
+    <string name="won">Won</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="state">State</string>
+    <string name="the_squad_name">The Squad Name(Team Name)</string>
+    <string name="pubg_username">PUBG Username</string>
+    <string name="clash_royale_username">Clash Royale Username</string>
+    <string name="call_of_duty_username">Call of Duty Username</string>
+    <string name="free_fire_username">Free Fire Username</string>
+    <string name="enter_pubg_username">Enter Your PUBG Username</string>
+    <string name="enter_clash_royale_username">Enter Your Clash Royale Username</string>
+    <string name="enter_call_of_duty_username">Enter Your Call of Duty Username</string>
+    <string name="enter_free_fire_username">Enter Your Free Fire Username</string>
+
+    //Profile Activty//////
+
+    //More Activty////
+    <string name="more">more</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="videos">Videos</string>
+    <string name="refer_a_friend">Refer a Friend</string>
+    <string name="join_via_inite_code">Join Via Invite Code</string>
+    <string name="apply_promo_code">Apply Promo Code</string>
+    <string name="how_to_play">How to Play</string>
+    <string name="thesquad_point_scoring">The Squad Point Scoring</string>
+    <string name="customer_care">Customer Care</string>
+    <string name="legality">Legality</string>
+    <string name="term_and_condition">Term and Condition</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout">Logout</string>
+
+
+    //More Activty////
+
+
+    //Bottom Navigation
+    <string name="home">Home</string>
+    <string name="my_contest">My Contests</string>
+    <string name="account">Account</string>
+
+    //
+
+    //Account activty///
+    <string name="total_balance">Total Balance</string>
+    <string name="rupee">0</string>
+    <string name="deposited">DEPOSITED</string>
+    <string name="my_recent_transactions">MY RECENT TRANSACTION</string>
+    <string name="manage_payments">MANAGE PAYMENTS</string>
+    <string name="add_balance_to_your_account">Add balance to your account</string>
+    <string name="add_remove_cards_wallets_etc">Add/Remove Cards, Wallets, etc</string>
+    <string name="mobile_amp_email">MOBILE &amp; EMAIL</string>
+    <string name="pan">PAN</string>
+    <string name="bank">BANK</string>
+    <string name="how_do_i_get_my_money">How do I get my money?</string>
+    <string name="winnings">WINNINGS</string>
+    <string name="bonus">BONUS</string>
+    <string name="withdraw">WITHDRAW</string>
+
+    ///GAmes NAme///
+    <string name="pubg">PUBG</string>
+    <string name="clash_royale">Clash Royale</string>
+    <string name="call_of_duty">Call of Duty</string>
+    <string name="free_fire">Free Fire</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

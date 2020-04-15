@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/lyt_noti"
+        android:background="@drawable/bottom_rounded"
+        android:layout_width="match_parent"
+        android:layout_height="84dp">
+
+        <RelativeLayout
+            android:id="@+id/lyt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Contests"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="true"
+                android:fontFamily="@font/poppins_medium"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="0.5dp"
+            android:layout_below="@+id/lyt_title"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            app:tabSelectedTextColor="@android:color/white"
+            app:tabTextColor="@color/colorLightGrey"/>
+
+    </RelativeLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/lyt_noti"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="-45dp"
+        android:src="@drawable/ic_group"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/lyt_frame"
+        android:layout_centerHorizontal="true"/>
+    <FrameLayout
+        android:id="@+id/lyt_frame"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_alignTop="@+id/lyt_frame"
+            android:layout_alignStart="@+id/lyt_frame"/>
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:weightSum="5">
+
+            <LinearLayout android:orientation="vertical"
+                android:id="@+id/lyt_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/img_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_noun_home"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home"
+                    android:fontFamily="@font/poppins"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/lyt_contest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/img_contest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_noun_trophy"/>
+
+                <TextView android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_contest"
+                    android:fontFamily="@font/poppins"/>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:textSize="10sp"
+                    android:textColor="@color/colorOrange"
+                    android:gravity="bottom|center_vertical|center_horizontal|center"
+                    android:layout_gravity="center" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="@string/profile"
+                    android:fontFamily="@font/poppins_medium"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/lyt_wallet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_walet"/>
+
+                <TextView
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:id="@+id/lyt_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_selected_more"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more"
+                    android:fontFamily="@font/poppins"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</RelativeLayout>

@@ -11,17 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginregisteration.OtpActivity"></activity>
-        <activity android:name=".loginregisteration.LoginActivity" />
-        <activity android:name=".loginregisteration.RegisterActivty" />
-        <activity android:name=".startscreen.ImageSliderActivity">
+        <activity android:name=".mycontest.MyContestActivity"></activity>
+        <activity android:name=".account.AccountActivity">
+
+        </activity>
+        <activity android:name=".more.MoreActivity"></activity>
+        <activity android:name=".profile.ProfileActivity" />
+        <activity android:name=".home.HomeActivity" >
+
+        </activity>
+        <activity android:name=".loginregisteration.CreateNewPasswordActivity" />
+        <activity android:name=".loginregisteration.ResetPasswordActivity" />
+        <activity android:name=".loginregisteration.OtpActivity" />
+        <activity android:name=".loginregisteration.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" > </activity>
+        <activity android:name=".loginregisteration.RegisterActivty" />
+        <activity android:name=".startscreen.ImageSliderActivity" />
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
