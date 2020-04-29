@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.skteam.thesquad.LeaderBoardActivity;
 import com.skteam.thesquad.R;
 import com.skteam.thesquad.account.AccountActivity;
 import com.skteam.thesquad.common.Common;
@@ -66,5 +67,9 @@ public class MoreActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void LeaderBoard(View view){
+        startActivity(new Intent(MoreActivity.this, LeaderBoardActivity.class));
     }
 }

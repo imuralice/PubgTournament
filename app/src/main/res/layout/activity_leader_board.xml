@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@id/lyt_noti"
+        android:layout_width="fill_parent"
+        android:layout_height="55.0dip"
+        android:background="@drawable/bottom_rounded">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/leaderboard"
+            android:textColor="@android:color/white"
+            android:textSize="16.0sp" />
+
+        <ImageView
+            android:id="@id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10.0dip"
+            android:src="@drawable/ic_arrow_back" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="35.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="@color/orange_color"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.45"
+            android:fontFamily="@font/poppins"
+            android:paddingStart="20.0sp"
+            android:text="Team Name"
+            android:textColor="@android:color/white"
+            android:textSize="12.0sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/poppins"
+            android:gravity="start|center"
+            android:paddingStart="10.0dip"
+            android:text="Points"
+            android:textColor="@android:color/white"
+            android:textSize="12.0sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/poppins"
+            android:text="Level"
+            android:textColor="@android:color/white"
+            android:textSize="12.0sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/poppins"
+            android:text="Rank"
+            android:textColor="@android:color/white"
+            android:textSize="12.0sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_leader"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10.0dip"
+        android:clipToPadding="true"
+        android:paddingBottom="10.0dip" />
+</LinearLayout>

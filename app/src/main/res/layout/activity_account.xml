@@ -1,178 +1,868 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout android:background="@drawable/bottom_rounded" android:layout_width="match_parent" android:layout_height="160dp"/>
-    <TextView android:textSize="16sp" android:textColor="@android:color/white" android:id="@+id/txt_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/account" android:layout_centerHorizontal="true" android:fontFamily="@font/poppins_medium"/>
-    <ImageView android:id="@+id/img_back" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:src="@drawable/ic_arrow_back" android:layout_marginStart="20dp"/>
-    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_above="@+id/img_profile" android:layout_below="@+id/txt_title">
-        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
-            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" app:cardCornerRadius="5dp">
-                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp">
-                    <ImageView android:id="@+id/img_user" android:layout_width="100dp" android:layout_height="100dp" android:layout_margin="20dp" android:src="@mipmap/thesquadlogo" android:scaleType="centerCrop"/>
-                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginStart="15dp">
-                        <TextView android:textSize="14sp" android:textColor="#082240" android:id="@+id/txt_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/poppins_medium"/>
-                        <TextView android:textSize="10sp" android:textColor="@color/colorOrange" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/total_balance" android:fontFamily="@font/poppins"/>
-                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                            <TextView android:textSize="14sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rupee"/>
-                            <TextView android:textSize="14sp" android:textColor="#082240" android:id="@+id/txt_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/poppins_medium"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/bottom_rounded" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/account"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_arrow_back"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/img_profile"
+        android:layout_below="@+id/txt_title"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_user"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/thesquadlogo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="#082240"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/total_balance"
+                            android:textColor="@color/colorOrange"
+                            android:textSize="10sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rupee"
+                                android:textColor="#082240"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txt_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#082240"
+                                android:textSize="14sp" />
                         </LinearLayout>
-                        <androidx.cardview.widget.CardView android:id="@+id/cv_add_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" app:cardCornerRadius="15dp">
-                            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:background="@color/colorPrimary" android:layout_width="wrap_content" android:layout_height="30dp">
-                                <ImageView android:gravity="center" android:layout_gravity="center" android:paddingBottom="5dp" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_balance_add" android:layout_marginStart="15dp"/>
-                                <TextView android:textSize="12sp" android:textColor="@android:color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Balance" android:fontFamily="@font/poppins_medium" android:layout_marginStart="5dp" android:layout_marginEnd="20dp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_add_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="15dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:background="@color/colorPrimary"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:paddingBottom="5dp"
+                                    android:src="@drawable/ic_balance_add" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="center"
+                                    android:text="Add Balance"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12sp" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" app:cardCornerRadius="5dp" app:cardElevation="5dp">
-                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp">
-                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
-                            <ImageView android:layout_width="30dp" android:layout_height="wrap_content" android:src="@drawable/ic_deposited" android:adjustViewBounds="true"/>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deposited" android:fontFamily="@font/poppins_medium" android:layout_marginStart="10sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_deposited" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/deposited"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
                         </LinearLayout>
-                        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rupee"/>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:id="@+id/txt_deposited" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/poppins_medium" android:layout_marginEnd="10dp"/>
-                            <ImageView android:id="@+id/img_info1" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_info_black" android:adjustViewBounds="true"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rupee"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txt_deposited"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/img_info1"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_info_black" />
                         </LinearLayout>
                     </RelativeLayout>
-                    <View android:background="#e6e7e8" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginTop="10dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp"/>
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp">
-                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
-                            <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_winnings" android:adjustViewBounds="true"/>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/winnings" android:fontFamily="@font/poppins_medium" android:layout_marginStart="10sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#e6e7e8" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_winnings" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/winnings"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
                         </LinearLayout>
-                        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
-                            <androidx.cardview.widget.CardView android:layout_gravity="end" android:id="@+id/cv_withdraw" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="10dp" app:cardCornerRadius="10dp">
-                                <RelativeLayout android:background="@color/colorOrange" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                                    <TextView android:textSize="10sp" android:textColor="@android:color/white" android:gravity="center" android:id="@+id/txt_withdraw" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:text="@string/withdraw" android:fontFamily="@font/poppins" android:textAlignment="center" android:paddingStart="10dp" android:paddingEnd="10dp" android:layout_marginStart="5dp" android:layout_marginEnd="5sp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_withdraw"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginEnd="10dp"
+                                android:visibility="visible"
+                                app:cardCornerRadius="10dp">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/colorOrange">
+
+                                    <TextView
+                                        android:id="@+id/txt_withdraw"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="5sp"
+                                        android:layout_marginBottom="5dp"
+                                        android:fontFamily="@font/poppins"
+                                        android:gravity="center"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="@string/withdraw"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="10sp" />
                                 </RelativeLayout>
                             </androidx.cardview.widget.CardView>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rupee"/>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:id="@+id/txt_winnings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/poppins_medium" android:layout_marginEnd="10dp"/>
-                            <ImageView android:id="@+id/img_info2" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_info_black" android:adjustViewBounds="true"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rupee"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txt_winnings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/img_info2"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_info_black" />
                         </LinearLayout>
                     </RelativeLayout>
-                    <View android:background="#e6e7e8" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginTop="10dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp"/>
-                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp">
-                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
-                            <ImageView android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_bonus" android:adjustViewBounds="true" android:baselineAligned="false"/>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bonus" android:fontFamily="@font/poppins_medium" android:layout_marginStart="10sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#e6e7e8" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:adjustViewBounds="true"
+                                android:baselineAligned="false"
+                                android:src="@drawable/ic_bonus" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="@string/bonus"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
                         </LinearLayout>
-                        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rupee"/>
-                            <TextView android:textSize="12sp" android:textColor="#082240" android:id="@+id/txt_bonus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/poppins_medium" android:layout_marginEnd="10dp"/>
-                            <ImageView android:id="@+id/img_info3" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_info_black" android:adjustViewBounds="true"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rupee"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txt_bonus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#082240"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/img_info3"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_info_black" />
                         </LinearLayout>
                     </RelativeLayout>
-                    <View android:background="#e6e7e8" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginTop="10dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#e6e7e8" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView android:id="@+id/cv_recent_transaction" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" app:cardCornerRadius="5dp">
-                <RelativeLayout android:id="@+id/lyt_recent_transaction" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:layout_marginEnd="5dp">
-                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:layout_centerVertical="true" android:layout_marginStart="15dp">
-                        <ImageView android:layout_gravity="center" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_my_recent_transactions" android:adjustViewBounds="true"/>
-                        <TextView android:textSize="12sp" android:textColor="#082240" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_recent_transactions" android:fontFamily="@font/poppins_medium" android:layout_marginStart="10sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_recent_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/lyt_recent_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_my_recent_transactions" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/my_recent_transactions"
+                            android:textColor="#082240"
+                            android:textSize="12sp" />
                     </LinearLayout>
-                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
-                        <ImageView android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_next_arrow" android:adjustViewBounds="true" android:layout_marginEnd="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_next_arrow" />
                     </LinearLayout>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-<!--            <androidx.cardview.widget.CardView android:id="@+id/cv_manage_payments" android:visibility="visible" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="15dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp">-->
-<!--                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="10dp" android:layout_marginEnd="10dp">-->
-<!--                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginStart="15dp">-->
-<!--                        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="0x7f080262" android:adjustViewBounds="true" android:baselineAligned="false"/>-->
-<!--                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">-->
-<!--                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/manage_payments" android:fontFamily="@font/poppins_semibold" android:layout_marginStart="10sp"/>-->
-<!--                            <TextView android:textSize="8sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_remove_cards_wallets_etc" android:fontFamily="@font/poppins" android:layout_marginStart="10sp"/>-->
-<!--                        </LinearLayout>-->
-<!--                    </LinearLayout>-->
-<!--                    <ImageView android:layout_width="15dp" android:layout_height="15dp" android:layout_marginTop="15dp" android:src="@drawable/ic_next_arrow" android:adjustViewBounds="true" android:layout_alignParentEnd="true"/>-->
-<!--                </RelativeLayout>-->
-<!--            </androidx.cardview.widget.CardView>-->
+            <!--            <androidx.cardview.widget.CardView android:id="@+id/cv_manage_payments" android:visibility="visible" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="15dp" android:layout_marginStart="20dp" android:layout_marginEnd="20dp">-->
+            <!--                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="10dp" android:layout_marginEnd="10dp">-->
+            <!--                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginStart="15dp">-->
+            <!--                        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="0x7f080262" android:adjustViewBounds="true" android:baselineAligned="false"/>-->
+            <!--                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">-->
+            <!--                            <TextView android:textSize="12sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/manage_payments" android:fontFamily="@font/poppins_semibold" android:layout_marginStart="10sp"/>-->
+            <!--                            <TextView android:textSize="8sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_remove_cards_wallets_etc" android:fontFamily="@font/poppins" android:layout_marginStart="10sp"/>-->
+            <!--                        </LinearLayout>-->
+            <!--                    </LinearLayout>-->
+            <!--                    <ImageView android:layout_width="15dp" android:layout_height="15dp" android:layout_marginTop="15dp" android:src="@drawable/ic_next_arrow" android:adjustViewBounds="true" android:layout_alignParentEnd="true"/>-->
+            <!--                </RelativeLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
 
-            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:weightSum="3" android:layout_marginStart="10dp" android:layout_marginEnd="10dp">
-                <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@+id/cv_email_mobile" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:layout_weight="1" android:layout_marginEnd="10dp" android:elevation="5dp" app:cardCornerRadius="5dp">
-                    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp">
-                        <ImageView android:layout_gravity="center" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="30dp" android:src="@drawable/ic_mobile_email"/>
-                        <TextView android:textSize="11sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/mobile_amp_email" android:fontFamily="@font/poppins_semibold"/>
-                        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <ImageView android:id="@+id/img_verified_email" android:visibility="gone" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_checkmark1"/>
-                            <TextView android:textSize="11sp" android:textColor="@color/colorOrange" android:id="@+id/txt_reason_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PENDING" android:fontFamily="@font/poppins_medium" android:layout_marginStart="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_email_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/ic_mobile_email" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/mobile_amp_email"
+                            android:textColor="#082240"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/img_verified_email"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/ic_checkmark1"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/txt_reason_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="PENDING"
+                                android:textColor="@color/colorOrange"
+                                android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:id="@+id/cv_pan" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="10dp" android:elevation="10dp" app:cardCornerRadius="5dp">
-                    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp">
-                        <ImageView android:layout_gravity="center" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="30dp" android:src="@drawable/icpan"/>
-                        <TextView android:textSize="11sp" android:textColor="#082240" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/pan" android:fontFamily="@font/poppins_semibold"/>
-                        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <ImageView android:id="@+id/img_verified_pan" android:visibility="gone" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_checkmark1"/>
-                            <TextView android:textSize="11sp" android:textColor="@color/colorOrange" android:id="@+id/txt_reason_pan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PENDING" android:fontFamily="@font/poppins_medium" android:layout_marginStart="5dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/icpan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/pan"
+                            android:textColor="#082240"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/img_verified_pan"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/ic_checkmark1"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/txt_reason_pan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="PENDING"
+                                android:textColor="@color/colorOrange"
+                                android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:id="@+id/cv_bank" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:layout_weight="1" android:elevation="10dp" app:cardCornerRadius="5dp">
-                    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp">
-                        <ImageView android:layout_gravity="center" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="30dp" android:src="@drawable/ic_bank"/>
-                        <TextView android:textSize="11sp" android:textColor="#082240" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/bank" android:fontFamily="@font/poppins_semibold"/>
-                        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                            <ImageView android:id="@+id/img_verified_bank" android:visibility="gone" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/ic_checkmark1"/>
-                            <TextView android:textSize="11sp" android:textColor="@color/colorOrange" android:id="@+id/txt_reason_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PENDING" android:fontFamily="@font/poppins_medium" android:layout_marginStart="5dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_bank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/ic_bank" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:text="@string/bank"
+                            android:textColor="#082240"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/img_verified_bank"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/ic_checkmark1"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/txt_reason_account"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="PENDING"
+                                android:textColor="@color/colorOrange"
+                                android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-            <TextView android:textSize="14sp" android:textColor="@color/colorOrange" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/how_do_i_get_my_money" android:fontFamily="@font/poppins_medium" android:layout_marginStart="10dp"/>
-            <androidx.cardview.widget.CardView android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" app:cardCornerRadius="5dp" app:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/how_do_i_get_my_money"
+                android:textColor="@color/colorOrange"
+                android:textSize="14sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
                     <WebView
                         android:id="@+id/wv_youtube"
                         android:layout_width="match_parent"
-                        android:layout_height="175dp"/>
+                        android:layout_height="175dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
-    <ImageView android:id="@+id/img_profile" android:layout_width="70dp" android:layout_height="70dp" android:layout_marginBottom="-45dp" android:src="@drawable/ic_group" android:adjustViewBounds="true" android:layout_above="@+id/lyt_frame" android:layout_centerHorizontal="true"/>
-    <FrameLayout android:id="@+id/lyt_frame" android:layout_width="match_parent" android:layout_height="65dp" android:layout_alignParentBottom="true">
 
-<!--       TODO: curve background image view-->
-<!--        <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="" android:scaleType="fitXY" android:adjustViewBounds="true"/>-->
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/lyt_frame"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-45dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_group" />
+
+    <FrameLayout
+        android:id="@+id/lyt_frame"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true">
+
+        <!--       TODO: curve background image view-->
+        <!--        <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="" android:scaleType="fitXY" android:adjustViewBounds="true"/>-->
 
 
-        <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="5dp" android:weightSum="5">
-            <LinearLayout android:orientation="vertical" android:id="@+id/lyt_home" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:id="@+id/img_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_noun_home"/>
-                <TextView android:textSize="10sp" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/home" android:fontFamily="@font/poppins"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:id="@+id/lyt_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_noun_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/home"
+                    android:textSize="10sp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:id="@+id/lyt_contest" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:id="@+id/img_contest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_my_contest"/>
-                <TextView android:textSize="10sp" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_contest" android:fontFamily="@font/poppins"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_contest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_contest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_my_contest" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/my_contest"
+                    android:textSize="10sp" />
             </LinearLayout>
-            <LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
-                <TextView android:textSize="10sp" android:textColor="@color/colorOrange" android:gravity="bottom|center_vertical|center_horizontal|center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/profile" android:fontFamily="@font/poppins_medium"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="bottom|center_vertical|center_horizontal|center"
+                    android:text="@string/profile"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="10sp" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:id="@+id/lyt_wallet" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_selected_wallet"/>
-                <TextView android:textSize="10sp" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/account" android:fontFamily="@font/poppins"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_wallet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_selected_wallet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/account"
+                    android:textSize="10sp" />
             </LinearLayout>
-            <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@+id/lyt_more" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5dp" android:src="@drawable/ic_more"/>
-                <TextView android:textSize="10sp" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/more" android:fontFamily="@font/poppins"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/ic_more" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="@string/more"
+                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
-    <View android:id="@+id/bg" android:background="#99000000" android:visibility="gone" android:layout_width="match_parent" android:layout_height="1000dp"/>
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="1000dp"
+        android:background="#99000000"
+        android:visibility="gone" />
 </RelativeLayout>
