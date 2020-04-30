@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LeaderBoardActivity"></activity>
+        <activity android:name=".ReferActivity"></activity>
+        <activity android:name=".activity.LeaderBoardActivity" />
         <activity android:name=".mycontest.MyContestActivity" />
-        <activity android:name=".account.AccountActivity"></activity>
+        <activity android:name=".account.AccountActivity" />
         <activity android:name=".more.MoreActivity" />
         <activity android:name=".profile.ProfileActivity" />
-        <activity android:name=".home.HomeActivity"></activity>
+        <activity android:name=".home.HomeActivity" />
         <activity android:name=".loginregisteration.CreateNewPasswordActivity" />
         <activity android:name=".loginregisteration.ResetPasswordActivity" />
         <activity android:name=".loginregisteration.OtpActivity" />
@@ -29,7 +30,7 @@
         </activity>
         <activity android:name=".loginregisteration.RegisterActivty" />
         <activity android:name=".startscreen.ImageSliderActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.MainActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

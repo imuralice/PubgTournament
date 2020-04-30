@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,13 +23,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.skteam.thesquad.MainActivity;
 import com.skteam.thesquad.R;
 import com.skteam.thesquad.common.Common;
 import com.skteam.thesquad.home.HomeActivity;
 import com.skteam.thesquad.retrofit.TheSquadApi;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import retrofit2.Call;

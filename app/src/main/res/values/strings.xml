@@ -139,5 +139,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_web_client_id" />
+    <string name="friend_sign_up_you_earns_100_amp_friends_earns_50"><![CDATA[Friend sign up, you earns ₹ 100 &amp; friends earns ₹ 50]]></string>
+    <string name="refer_friends">REFER FRIENDS</string>
 
 </resources>

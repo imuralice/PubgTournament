@@ -1,9 +1,10 @@
-package com.skteam.thesquad;
+package com.skteam.thesquad.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.skteam.thesquad.R;
 import com.skteam.thesquad.loginregisteration.RandomString;
 
 import java.util.Random;

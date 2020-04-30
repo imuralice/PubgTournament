@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@id/lyt_noti"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="270.0dip"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/dummy_ae_282" />
+
+            <ImageView
+                android:id="@id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20.0dip"
+                android:layout_marginTop="30.0dip"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:id="@id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30.0dip"
+                android:fontFamily="@font/poppins_medium"
+                android:text="REFER A FRIEND"
+                android:textColor="@android:color/white"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/img_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30.0dip"
+                android:layout_marginEnd="20.0dip"
+                android:fontFamily="@font/poppins"
+                android:padding="5.0dip"
+                android:text="Details"
+                android:textColor="@android:color/white"
+                android:textSize="12.0sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pan_upload"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_pan_verified"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginEnd="20.0dip"
+            android:visibility="visible"
+            app:cardCornerRadius="7.0dip">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip"
+                    android:background="@color/orange_color"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30.0dip"
+                        android:layout_height="30.0dip"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:src="@drawable/ic_wallet_refer" />
+
+                    <TextView
+                        android:id="@+id/txt_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10.0dip"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Invite your friend and earn upto  "
+                        android:textColor="@android:color/white"
+                        android:textSize="12.0sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/rupee"
+                        android:textColor="@android:color/white"
+                        android:textSize="12.0sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text=" 10000"
+                        android:textColor="@android:color/white"
+                        android:textSize="12.0sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10.0dip"
+                        android:layout_marginTop="15.0dip"
+                        android:text="@string/rupee"
+                        android:textColor="@android:color/white"
+                        android:textSize="16.0sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15.0dip"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="1000"
+                        android:textColor="@android:color/white"
+                        android:textSize="16.0sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15.0dip"
+                        android:layout_marginTop="15.0dip"
+                        android:layout_marginEnd="15.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:src="@drawable/ic_next_arrow" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:orientation="horizontal"
+            android:weightSum="2.0">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10.0dip"
+                    app:cardCornerRadius="5.0dip"
+                    app:cardElevation="5.0dip">
+
+                    <ImageView
+                        android:layout_width="50.0dip"
+                        android:layout_height="50.0dip"
+                        android:layout_gravity="center"
+                        android:layout_margin="20.0dip"
+                        android:src="@drawable/ic_invite_friends" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="150.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10.0dip"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Invite your friends with referral code"
+                    android:textAlignment="center"
+                    android:textColor="#ff70797e"
+                    android:textSize="11.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10.0dip"
+                    app:cardCornerRadius="5.0dip"
+                    app:cardElevation="5.0dip">
+
+                    <ImageView
+                        android:layout_width="50.0dip"
+                        android:layout_height="50.0dip"
+                        android:layout_margin="20.0dip"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_friends_earns" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txt_earn_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/friend_sign_up_you_earns_100_amp_friends_earns_50"
+                    android:textAlignment="center"
+                    android:textColor="#ff70797e"
+                    android:textSize="11.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20.0dip"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Your Referral Code"
+            android:textColor="#ff082240"
+            android:textSize="14.0sp" />
+
+        <TextView
+            android:id="@+id/txt_ref_code"
+            android:layout_width="wrap_content"
+            android:layout_height="40.0dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/dotted_border"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingStart="80.0dip"
+            android:paddingEnd="80.0dip"
+            android:text="FANT528"
+            android:textColor="#ff082240"
+            android:textSize="14.0sp" />
+
+        <TextView
+            android:id="@+id/txt_copy_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10.0dip"
+            android:fontFamily="@font/poppins"
+            android:text="Copy Code"
+            android:textColor="#ff082240"
+            android:textSize="12.0sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_whatsappd"
+            android:layout_width="wrap_content"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="20.0dip"
+            android:layout_marginEnd="20.0dip"
+            android:elevation="3.0dip"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="25.0dip">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="50.0dip"
+                android:paddingEnd="50.0dip">
+
+                <ImageView
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip"
+                    android:src="@drawable/ic_whatsapp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10.0dip"
+                    android:text="INVITE VIA WHATS APP"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_ref_frnd"
+            android:layout_width="wrap_content"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="15.0dip"
+            android:elevation="3.0dip"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="25.0dip">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="50.0dip"
+                android:paddingEnd="50.0dip">
+
+                <ImageView
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip"
+                    android:src="@drawable/ic_share" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10.0dip"
+                    android:text="@string/refer_friends"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
